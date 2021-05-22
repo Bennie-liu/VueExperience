@@ -1,5 +1,10 @@
 <template>
-  <div class="content"></div>
+  <div class="detail">
+    <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
+    <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
+    <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
+    <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />END..
+  </div>
 </template>
 <script>
 import { defineComponent } from "@vue/composition-api";
@@ -11,11 +16,9 @@ export default defineComponent({
 });
 </script>
 <style scoped>
-.content {
-  font-size: 30px;
-  height: calc(100vh - 86px);
-  /* 86 = header 86 + margin 20 */
-  margin: 10px;
-  background-color: rgb(55 138 154);
+.detail {
+  background-color: rgb(255, 255, 255);
+  font-size: 24px;
+  color: #6e6b7b;
 }
 </style>
