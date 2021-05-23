@@ -26,3 +26,4 @@ npm run build
 ```
 ## License
 MIT
+Copyright (c) 2021 Martin-Mas
