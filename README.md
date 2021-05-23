@@ -1,16 +1,26 @@
 # vue-experience
 
-## Project setup
+## 克隆项目
+```
+git clone https://github.com/Martin-Mas/VueExperience.git
+```
+
+## 进入项目
+```
+cd vue-experience
+```
+
+## 安装依赖
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### 启动服务
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### 打包项目
 ```
 npm run build
 ```
