@@ -1,8 +1,8 @@
 # vue-experience
 
-# [预览地址](https://learningwhy.today)
+### [预览地址](https://learningwhy.today)
 
-### 1.克隆项目
+## 1.克隆项目
 ```
 git clone https://github.com/Martin-Mas/VueExperience.git
 ```
@@ -17,16 +17,16 @@ cd vue-experience
 npm install
 ```
 
-### 4.启动服务
+## 4.启动服务
 ```
 npm run serve
 ```
 
-### 5.打包发布项目
+## 5.打包发布项目
 ```
 npm run build
 ```
-## License
+### License
 [MIT](https://opensource.org/licenses/MIT)
 
 Copyright (c) 2021 Martin-Mas
