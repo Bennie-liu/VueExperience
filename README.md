@@ -1,4 +1,5 @@
 # vue-experience
+该项目个人打算所有功能模块自己都尽量去写一遍，并不会直接套用现成代码。造车轮子去咯！
 
 ### [预览地址](https://learningwhy.today)
 
