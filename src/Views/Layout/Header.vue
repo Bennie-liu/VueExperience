@@ -10,7 +10,7 @@
         <i class="el-icon-full-screen"></i>
       </div>
       <span>
-        <img src="http://file.learningwhy.today/yhy.png" alt="图片丢失咯" />
+        <img src="https://gw.alicdn.com/tps/TB1W_X6OXXXXXcZXVXXXXXXXXXX-400-400.png" alt="丢" />
       </span>
     </div>
   </div>
