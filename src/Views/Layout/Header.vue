@@ -6,14 +6,11 @@
       @click="toggleClick"
     ></i>
     <div class="header-right">
-      <div class="full-screen">
+      <div class="full-screen" @click="screenFull">
         <i class="el-icon-full-screen"></i>
       </div>
       <span>
-        <img
-          src="https://gw.alicdn.com/tps/TB1W_X6OXXXXXcZXVXXXXXXXXXX-400-400.png"
-          alt="图片丢失咯"
-        />
+        <img src="http://file.learningwhy.today/yhy.png" alt="图片丢失咯" />
       </span>
     </div>
   </div>
@@ -21,6 +18,7 @@
 </template>
 <script>
 import { defineComponent } from "@vue/composition-api";
+import screenFull from "screenfull";
 
 export default defineComponent({
   setup() {
@@ -29,6 +27,7 @@ export default defineComponent({
   data() {
     return {
       foldIcon: true,
+      fullScreen: false,
     };
   },
   methods: {
@@ -36,6 +35,12 @@ export default defineComponent({
       this.foldIcon = !this.foldIcon;
       console.log("Header.vue折叠按钮被点击...");
       this.$emit("toggleClick");
+    },
+    screenFull() {
+      if (!screenFull.isEnabled) {
+        return false;
+      }
+      screenFull.toggle();
     },
   },
 });
