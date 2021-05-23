@@ -1,7 +1,7 @@
 <template>
   <div class="asider">
     <el-row class="tac">
-      <el-col :span="12">
+      <el-col :span="24">
         <el-menu
           :uniqueOpened="true"
           default-active="2"
@@ -10,7 +10,9 @@
           @close="handleClose"
           background-color="#545c64"
           text-color="#fff"
+          mode="vertical"
           active-text-color="#ffd04b"
+          :collapse="isCollapse"
         >
           <el-submenu index="1">
             <template #title>
@@ -38,24 +40,6 @@
             <i class="el-icon-document"></i>
             <template #title>导航三</template>
           </el-menu-item>
-          <el-menu-item index="4">
-            <i class="el-icon-setting"></i>
-            <template #title>导航四</template>
-          </el-menu-item>
-          <el-submenu index="5">
-            <template #title>
-              <i class="el-icon-location"></i>
-              <span>导航一</span>
-            </template>
-            <el-menu-item-group>
-              <template #title>分组一</template>
-              <el-menu-item index="5-1">选项1</el-menu-item>
-              <el-menu-item index="5-2">选项2</el-menu-item>
-            </el-menu-item-group>
-            <el-menu-item-group title="分组2">
-              <el-menu-item index="5-3">选项3</el-menu-item>
-            </el-menu-item-group>
-          </el-submenu>
         </el-menu>
       </el-col>
     </el-row>
@@ -68,17 +52,30 @@ export default defineComponent({
   setup() {
     "Asider";
   },
+  data() {
+    return {
+      isCollapse: false,
+    };
+  },
+  methods: {
+    toggleClick() {
+      console.log("Asider.vue组件...");
+      this.isCollapse = !this.isCollapse;
+    },
+  },
 });
 </script>
 
 <style scoped>
 .asider {
-  width: 220px;
   height: 100vh;
-  background-color: #0ba5a5;
 }
 /* 修改Element菜单样式 */
 .el-menu {
+  height: 100vh;
+}
+/* 此样式作用为消除左边菜单折叠卡顿 */
+.el-menu-vertical-demo:not(.el-menu--collapse) {
   width: 220px;
   height: 100vh;
 }

@@ -1,8 +1,8 @@
 <template>
   <div class="app-container">
-    <Asider />
+    <Asider ref="Asider" />
     <div class="main-container">
-      <Header />
+      <Header @toggleClick="toggleClick" />
       <div class="app-main">
         <div class="content">
           <Mainer />
@@ -13,9 +13,9 @@
 </template>
 
 <script>
-import Asider from "./Views/Layout/Asider.vue";
-import Header from "./Views/Layout/Header.vue";
-import Mainer from "./Views/Layout/Mainer.vue";
+import Asider from "./views/layout/Asider.vue";
+import Header from "./views/layout/Header.vue";
+import Mainer from "./views/layout/Mainer.vue";
 
 export default {
   name: "App",
@@ -23,6 +23,12 @@ export default {
     Asider,
     Header,
     Mainer,
+  },
+  methods: {
+    toggleClick() {
+      console.log("App.vue组件...");
+      this.$refs.Asider.toggleClick();
+    },
   },
 };
 </script>

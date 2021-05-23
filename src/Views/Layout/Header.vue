@@ -1,14 +1,18 @@
 <template>
   <div class="header">
-    <i class="header-left el-icon-s-fold"></i>
+    <i
+      class="header-left"
+      :class="foldIcon ? 'el-icon-s-fold' : 'el-icon-s-unfold'"
+      @click="toggleClick"
+    ></i>
     <div class="header-right">
       <div class="full-screen">
         <i class="el-icon-full-screen"></i>
       </div>
-      <span class="photo">
+      <span>
         <img
-          src="https://i.gtimg.cn/club/item/face/img/2/15922_100.gif"
-          alt=""
+          src="https://gw.alicdn.com/tps/TB1W_X6OXXXXXcZXVXXXXXXXXXX-400-400.png"
+          alt="图片丢失咯"
         />
       </span>
     </div>
@@ -22,12 +26,23 @@ export default defineComponent({
   setup() {
     "Header";
   },
+  data() {
+    return {
+      foldIcon: true,
+    };
+  },
+  methods: {
+    toggleClick() {
+      this.foldIcon = !this.foldIcon;
+      console.log("Header.vue折叠按钮被点击...");
+      this.$emit("toggleClick");
+    },
+  },
 });
 </script>
 <style  scoped>
 .header {
   width: 100%;
-  /* background-color: #07868f; */
   height: 50px;
 }
 .tager {
@@ -56,10 +71,7 @@ i:hover {
   float: left;
   cursor: pointer;
 }
-/* .photo {
-  float: right;
-} */
-.photo > img {
+img {
   width: 35%;
   border-radius: 50%;
   margin-left: 10px;
