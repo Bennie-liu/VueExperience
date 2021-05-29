@@ -1,9 +1,6 @@
 <template>
   <div class="detail">
-    <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
-    <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
-    <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
-    <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />END..
+    <router-view />
   </div>
 </template>
 <script>
@@ -20,5 +17,6 @@ export default defineComponent({
   background-color: rgb(255, 255, 255);
   font-size: 24px;
   color: #6e6b7b;
+  min-height: 100%;
 }
 </style>

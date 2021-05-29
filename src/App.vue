@@ -51,7 +51,6 @@ export default {
 .content {
   font-size: 30px;
   height: calc(100vh - 100px);
-  /* 86 = header 86 + margin 20 */
   margin: 10px;
   overflow: auto;
 }

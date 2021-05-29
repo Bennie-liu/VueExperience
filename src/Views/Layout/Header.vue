@@ -10,7 +10,7 @@
         <i class="el-icon-full-screen"></i>
       </div>
       <span>
-        <img src="https://gw.alicdn.com/tps/TB1W_X6OXXXXXcZXVXXXXXXXXXX-400-400.png" alt="丢" />
+        <img alt="photo" src="../../img/YHF.png" />
       </span>
     </div>
   </div>
@@ -56,8 +56,9 @@ export default defineComponent({
 }
 .header-left {
   font-size: 26px;
-  padding-top: 13px;
+  line-height: 50px;
   padding-left: 10px;
+  float: left;
   cursor: pointer;
   color: #5c6b77;
 }
@@ -67,20 +68,21 @@ i:hover {
 .header-right {
   float: right;
   font-size: 26px;
-  padding-top: 8px;
   color: #5c6b77;
   position: relative;
   width: 90px;
+  height: 100%;
+  line-height: 50px;
 }
 .full-screen {
   float: left;
   cursor: pointer;
 }
 img {
-  width: 35%;
+  width: 40%;
   border-radius: 50%;
   margin-left: 10px;
-  margin-top: 2px;
+  margin-top: 5px;
   cursor: pointer;
 }
 </style>
