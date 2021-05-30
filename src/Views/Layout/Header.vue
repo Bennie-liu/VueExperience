@@ -1,17 +1,27 @@
 <template>
   <div class="header">
-    <i
-      class="header-left"
-      :class="foldIcon ? 'el-icon-s-fold' : 'el-icon-s-unfold'"
-      @click="toggleClick"
-    ></i>
+    <svg class="icon header-left" aria-hidden="true" @click="toggleClick">
+      <use
+        :xlink:href="foldIcon ? '#ali-icon-s-fold' : '#ali-icon-s-unfold'"
+      ></use>
+    </svg>
+
     <div class="header-right">
-      <div class="full-screen" @click="screenFull">
-        <i class="el-icon-full-screen"></i>
-      </div>
-      <span>
-        <img alt="photo" src="../../img/YHF.png" />
-      </span>
+      <svg class="icon full-screen" aria-hidden="true" @click="screenFull">
+        <use
+          :xlink:href="
+            fullScreen
+              ? '#ali-icon-contract-outline'
+              : '#ali-icon-expand-outline'
+          "
+        ></use>
+      </svg>
+
+      <svg class="icon change-language" aria-hidden="true">
+        <use xlink:href="#ali-icon-language"></use>
+      </svg>
+
+      <img alt="photo" src="../../assets/userphoto.png" />
     </div>
   </div>
   <div class="tager"></div>
@@ -33,6 +43,7 @@ export default defineComponent({
   methods: {
     toggleClick() {
       this.foldIcon = !this.foldIcon;
+
       console.log("Header.vue折叠按钮被点击...");
       this.$emit("toggleClick");
     },
@@ -40,6 +51,7 @@ export default defineComponent({
       if (!screenFull.isEnabled) {
         return false;
       }
+      this.fullScreen = !this.fullScreen;
       screenFull.toggle();
     },
   },
@@ -56,11 +68,11 @@ export default defineComponent({
 }
 .header-left {
   font-size: 26px;
-  line-height: 50px;
   padding-left: 10px;
   float: left;
   cursor: pointer;
-  color: #5c6b77;
+  width: 1.1em;
+  height: 1.92em;
 }
 i:hover {
   color: #048ac9;
@@ -70,19 +82,25 @@ i:hover {
   font-size: 26px;
   color: #5c6b77;
   position: relative;
-  width: 90px;
   height: 100%;
   line-height: 50px;
+  margin-right: 10px;
 }
 .full-screen {
-  float: left;
   cursor: pointer;
+  width: 1.1em;
+  height: 1.92em;
+}
+.change-language {
+  cursor: pointer;
+  width: 1em;
+  height: 1.9em;
+  margin-left: 10px;
 }
 img {
-  width: 40%;
   border-radius: 50%;
   margin-left: 10px;
-  margin-top: 5px;
   cursor: pointer;
+  margin-bottom: 5px;
 }
 </style>
