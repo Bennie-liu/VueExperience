@@ -17,9 +17,23 @@
         ></use>
       </svg>
 
-      <svg class="icon change-language" aria-hidden="true">
-        <use xlink:href="#ali-icon-language"></use>
-      </svg>
+      <div class="change-language">
+        <el-dropdown style="font-size: 20px">
+          <svg
+            class="icon el-dropdown-link"
+            style="margin-bottom: 10px"
+            aria-hidden="true"
+          >
+            <use xlink:href="#ali-icon-language"></use>
+          </svg>
+          <template #dropdown>
+            <el-dropdown-menu>
+              <el-dropdown-item @click="chinese">简体中文</el-dropdown-item>
+              <el-dropdown-item @click="english">English</el-dropdown-item>
+            </el-dropdown-menu>
+          </template>
+        </el-dropdown>
+      </div>
 
       <img alt="photo" src="../../assets/userphoto.png" />
     </div>
@@ -54,6 +68,12 @@ export default defineComponent({
       this.fullScreen = !this.fullScreen;
       screenFull.toggle();
     },
+    english() {
+      alert(1);
+    },
+    chinese() {
+      alert(2);
+    },
   },
 });
 </script>
@@ -67,19 +87,19 @@ export default defineComponent({
   height: 30px;
 }
 .header-left {
-  font-size: 26px;
+  font-size: 24px;
   padding-left: 10px;
   float: left;
   cursor: pointer;
   width: 1.1em;
-  height: 1.92em;
+  height: 2.1em;
 }
 i:hover {
   color: #048ac9;
 }
 .header-right {
   float: right;
-  font-size: 26px;
+  font-size: 24px;
   color: #5c6b77;
   position: relative;
   height: 100%;
@@ -88,19 +108,18 @@ i:hover {
 }
 .full-screen {
   cursor: pointer;
-  width: 1.1em;
-  height: 1.92em;
+  width: 1em;
+  height: 1.8em;
+  padding: 0 8px;
 }
 .change-language {
-  cursor: pointer;
-  width: 1em;
-  height: 1.9em;
-  margin-left: 10px;
+  display: inline;
+  margin: 8px;
 }
 img {
   border-radius: 50%;
-  margin-left: 10px;
+  padding: 0 8px;
   cursor: pointer;
-  margin-bottom: 5px;
+  margin-bottom: 3px;
 }
 </style>
